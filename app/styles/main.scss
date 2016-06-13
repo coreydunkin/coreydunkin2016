@@ -1,6 +1,11 @@
 // bower:scss
 // endbower
 
+$offwhite: #EEEEEE;
+$offblack: #333333;
+
+
+// buncha mixins
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
@@ -29,25 +34,90 @@
   position: absolute;
 }
 
+// adding a border to the viewport
+#topleft, #topright, #bottomleft, #bottomright {
+ height: 24px;
+ width: 24px;
+ position: fixed;
+ display: block;
+ z-index: 20;
+}
+
+#top, #bottom {
+ height: 5px;
+ position: fixed;
+ left: 0px;
+ right: 0px;
+ display: block;
+ background-color: $offwhite;
+ z-index: 30
+}
+#left, #right {
+ width: 5px;
+ position: fixed;
+ top: 0px;
+ bottom: 0px;
+ display: block;
+ background-color: $offwhite;
+ z-index: 50;
+ border-top: 5px solid $offblack;
+ border-bottom: 5px solid $offblack;
+}
+
+#top {
+ top: 0px;
+ border-top: 5px solid $offblack;
+}
+#bottom {
+ bottom: 0px;
+ border-bottom: 5px solid $offblack;
+}
+#left {
+ left: 0px;
+ border-left: 5px solid $offblack;
+}
+#right {
+ right: 0px;
+ border-right: 5px solid $offblack;
+}
+#topleft {
+ top: 0px;
+ left: 0px;
+}
+#topright {
+ top: 0px;
+ right: 0px;
+}
+ #bottomleft {
+ bottom: 0px;
+ left: 0px;
+}
+ #bottomright {
+ bottom: 0px;
+ right: 0px;
+}
+// end adding a border to the viewport
+
+
 body {
-  background: #fafafa;
+  background: $offblack;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  color: $offwhite;
 }
 
 .hero-unit {
   margin: 50px auto 0 auto;
-  width: 300px;
+  width: 800px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
+  border: 1px solid $offwhite;
   padding: 60px;
   h1 {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    text-align: center;
   }
 }
 
@@ -60,8 +130,7 @@ body {
 
 
 
-
-// my code
+// hacks
 .faded-text {
   @include opacity(0.8);
 }
@@ -72,4 +141,11 @@ body {
 
 .visually-hidden {
   @extend %visuallyhidden;
+}
+
+// custom code 
+
+.page {
+  height: 100vh;
+  border: 1px solid red;
 }
