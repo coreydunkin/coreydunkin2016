@@ -113,22 +113,48 @@ body {
   border: 1px solid red;
 }
 
+
+// shapes
+
+.shapes {
+  width: 100px;
+  .shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    width: 100px;
+    display: none;
+    &.shape1 {
+      width: 37.7px;
+      height: 37.4px;
+      border: 1px solid red;
+      display: block;
+    }
+    &.shape2 {
+      width: 92.674px;
+      height: 93.308px;
+    }
+  }
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: block;
   &.hero {
+    height: 280px;
     h2 {
       text-align: center;
       font-family: 'merriweather', serif;
       font-weight: 400;
       font-style: italic;
-      font-size: 34px;      
+      font-size: 34px;
+      margin: 20px auto;      
     }
   }
 }
-
 
 .hero-unit {
   margin: 50px auto 0 auto;
