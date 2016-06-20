@@ -3,22 +3,13 @@ console.log('\'Allo \'Allo!');
 // get browser height on load
 
 var windowHeight = $(window).height();
-var heroUnitHeight = $('.home .hero').height();
+var heroUnitHeight = $('.home .hero-unit').height();
+
+console.log(windowHeight);
 
 $('.hero').css({
-	'marginTop': windowHeight/2 - heroUnitHeight/2
+	//'marginTop': windowHeight/2 - heroUnitHeight/2
 });
-
-// give us all the shape icons
-// function createShapes () {
-// 	var createOne;
-// 	var num = 1+;
-// 	for (var i = 0; i < 38; i++) {
-// 		$('.shapes').html("<img class='shape"+num+"' src='images/shapes/layer "+num+".svg'/>");	
-// 	};
-// }
-
-// createShapes();
 
 function createShapes() {
     var i=0;
@@ -38,8 +29,9 @@ function createShapes() {
 createShapes();
 
 function resizeShapes() {
-	//var height = document.getElementByClassName.getBBox().height;
-	//console.log(height);
+
 }
 
 resizeShapes();
+
+
