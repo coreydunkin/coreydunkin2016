@@ -114,11 +114,34 @@ body {
   overflow: hidden;
 }
 
+// particle.js
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 1;
+  z-index: 0;
+  .particles-js-canvas-el {
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-animation: appear 1.4s 1;
+    animation: appear 1.4s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+}
 
 // shapes
 
 .shapes {
-  width: 100px;
+  position: relative;
+  width: 887px;
+  margin: 241px auto;
+  height: 911px;
+  transform: scale(1.3, 1.3);
+  opacity: 0;
   .shape {
     position: absolute;
     top: 0;
@@ -126,159 +149,196 @@ body {
     opacity: 0.6;
     //width: 100px;
     //display: none;
+    filter: blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     &.shape1 {
       width: 37.7px;
       height: 37.4px;
-      border: 1px solid red;
-      display: block;
+      transform: translate(209px, 430px);
     }
     &.shape2 {
       width: 92.674px;
       height: 93.308px;
+      transform: translate(722px, 374px);
     }
     &.shape3 {
       width: 92.523px;
       height: 92.141px;
+      transform: translate(724px, 466px);
     }
     &.shape4 {
       width: 92px;
       height: 112px;
+      transform: translate(630px, 466px);
     }
     &.shape5 {
       width: 92px;
       height: 185.634px;
+      transform: translate(630px, 282px);
     }
     &.shape6 {
       width: 71.971px;
       height: 49.118px;
+      transform: translate(630px, 578px);
     }
     &.shape7 {
       width: 23.459px;
       height: 46.919px;
+      transform: translate(630px, 605px);
     }
     &.shape8 {
       width: 181px;
       height: 143px;
+      transform: translate(450px, 578px);
     }
     &.shape9 {
       width: 155.398px;
       height: 112px;
+      transform: translate(450px, 466px);
     }
     &.shape10 {
       width: 137.221px;
       height: 112px;
+      transform: translate(495px, 466px);
     }
     &.shape11 {
       width: 181px;
       height: 204.074px;
+      transform: translate(450px, 262px);
     }
     &.shape12 {
       width: 161.48px;
       height: 235.217px;
+      transform: translate(450px, 187px);
     }
     &.shape13 {
       width: 87.078px;
       height: 107.141px;
+      transform: translate(450px, 167px);
     }
     &.shape14 {
       width: 66.402px;
       height: 65.638px;
+      transform: translate(450px, 101px);
     }
     &.shape15 {
       width: 65.976px;
       height: 65.776px;
+      transform: translate(450px, 657px);
     }
     &.shape16 {
       width: 43.829px;
       height: 22.025px;
+      transform: translate(517px, 721px);
     }
     &.shape17 {
       width: 87.749px;
       height: 109.141px;
+      transform: translate(450px, 721px);
     }
     &.shape18 {
       width: 64.221px;
       height: 65.566px;
+      transform: translate(372px, 67px);
     }
     &.shape19 {
       width: 160.221px;
       height: 181.141px;
+      transform: translate(275px, 133px);
     }
     &.shape20 {
       width: 74.08px;
       height: 148.569px;
+      transform: translate(364px, 238px);
     }
     &.shape21 {
       width: 155px;
       height: 202.658px;
+      transform: translate(207px, 228px);
     }
     &.shape22 {
       width: 48.221px;
       height: 94.197px;
+      transform: translate(160px, 297px);
     }
     &.shape23 {
       width: 190.573px;
       height: 117.898px;
+      transform: translate(247px, 313px);
     }
     &.shape24 {
       width: 43.221px;
       height: 43.116px;
+      transform: translate(394px, 388px);
     }
     &.shape25 {
       width: 116.221px;
       height: 111px;
+      transform: translate(321px, 431px);
     }
     &.shape26 {
       width: 134.245px;
       height: 87.366px;
+      transform: translate(74px, 344px);
     }
     &.shape27 {
       width: 38.352px;
       height: 39.92px;
+      transform: translate(208px, 392px);
     }
     &.shape28 {
       width: 134.221px;
       height: 86.059px;
+      transform: translate(74px, 431px);
     }
     &.shape29 {
       width: 48.05px;
       height: 72.998px;
+      transform: translate(160px, 469px);
     }
     &.shape30 {
       width: 22.221px;
       height: 22.141px;
+      transform: translate(186px, 542px);
     }
     &.shape31 {
       width: 73.915px;
       height: 48.218px;
+      transform: translate(208px, 542px);
     }
     &.shape32 {
       width: 203.221px;
       height: 144px;
+      transform: translate(233px, 542px);
     }
     &.shape33 {
       width: 107.221px;
       height: 108.142px;
+      transform: translate(329px, 686px);
     }
     &.shape34 {
       width: 78.221px;
       height: 79.141px;
+      transform: translate(359px, 542px);
     }
     &.shape35 {
       width: 146.917px;
       height: 73.145px;
+      transform: translate(247px, 431px);
     }
     &.shape36 {
       width: 112.309px;
       height: 111px;
+      transform: translate(207px, 431px);
     }
     &.shape37 {
       width: 77.062px;
       height: 38.114px;
+      transform: translate(281px, 504px);
     }
     &.shape38 {
-      width: 77.062px;
-      height: 38.114px;
+      width: 81.062px;
+      height: 25.114px;
+      transform: translate(578px, 578px);
     }
   }
 }
@@ -290,7 +350,7 @@ body {
   display: block;
   &.hero {
     width: 50%;
-    height: 50%;
+    height: 280px;
     overflow: auto;
     margin: auto;
     position: absolute;
