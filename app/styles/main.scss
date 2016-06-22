@@ -1,8 +1,8 @@
 // bower:scss
 // endbower
 
-$offwhite: #EEEEEE;
-$offblack: #333333;
+$offwhite: #ded;
+$offblack: #222;
 
 
 // buncha mixins
@@ -108,6 +108,47 @@ body {
 
 // custom code 
 
+// navigation
+
+.nav {
+  position: fixed;
+  right: 10px;
+  top: 0px;
+  padding: 20px;
+  z-index: 999;
+  a {
+    text-decoration: none;
+    color: $offwhite;
+  }
+  li {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'merriweather', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: normal;
+    cursor: pointer;
+    span {
+      border-bottom: 0px solid white;
+      transition: padding-left 0.2s ease;
+    }
+    &:hover {
+      span {
+        border-bottom: 1px solid white;
+        padding-left: 2px;
+      }
+    }
+    sup {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 900;
+      top: -0.15em;
+      position: relative;
+    }          
+  }
+}
+
 .page {
   height: 100vh;
   //border: 1px solid red;
@@ -144,19 +185,19 @@ body {
 /* The animation code */
 @keyframes filterAnimate {
   0% {
-    filter: sepia(0.6) saturate(3) blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
   25% {
-    filter: sepia(0.1) saturate(1) blur(0px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    filter: sepia(0.1) saturate(1) blur(0.5px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }  
   50% {
     filter: sepia(0.4) saturate(5) blur(0px) drop-shadow( 0px 0px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
   75% {
-    filter: sepia(0.1) saturate(1) blur(0px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    filter: sepia(0.1) saturate(1) blur(0.5px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }  
   100% {
-    filter: sepia(0.6) saturate(3) blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
 }
 
@@ -178,7 +219,7 @@ body {
     //width: 100px;
     //display: none;
     //filter: sepia(0.8) saturate(6) blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-    filter: sepia(0.6) saturate(3) blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     animation: filterAnimate 10s infinite;
     &.shape1 {
       width: 37.7px;
@@ -198,22 +239,22 @@ body {
     &.shape4 {
       width: 92px;
       height: 112px;
-      transform: translate(630px, 466px);
+      transform: translate(631px, 466px);
     }
     &.shape5 {
       width: 92px;
       height: 185.634px;
-      transform: translate(630px, 282px);
+      transform: translate(631px, 282px);
     }
     &.shape6 {
       width: 71.971px;
       height: 49.118px;
-      transform: translate(630px, 578px);
+      transform: translate(631px, 578px);
     }
     &.shape7 {
       width: 23.459px;
       height: 46.919px;
-      transform: translate(630px, 605px);
+      transform: translate(631px, 605px);
     }
     &.shape8 {
       width: 181px;
@@ -373,6 +414,17 @@ body {
   }
 }
 
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border: 1px solid red;
+  background-color: white;
+  z-index: 999;
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
@@ -389,7 +441,7 @@ body {
     h2 {
       text-align: center;
       font-family: 'merriweather', serif;
-      font-weight: 400;
+      font-weight: 300;
       font-style: italic;
       font-size: 34px;
       margin: 20px auto;      
@@ -407,7 +459,7 @@ body {
   font-weight: 200;
   line-height: 30px;
   border: 1px solid $offwhite;
-  padding: 10px 60px;
+  padding: 40px 60px;
   position: relative;
   margin: 0 auto;
   background: rgba(0,0,0,0.2);
@@ -439,6 +491,87 @@ body {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+// video bg
+video#bgvid { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover; 
+  opacity: 0.05;
+  opacity: 0;
+}
+
+// portfolio
+.work {
+  .sub {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      font-family: 'Lato', Helvetica, Arial, sans-serif;
+      color: $offwhite;
+      font-weight: 300;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    p {
+      margin-top: 10px;
+      font-family: 'merriweather', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.4em;
+      cursor: pointer;
+    }
+  }
+  .mcd {
+    color: #bf0c0c;
+  }
+  .vw {
+    color: #003057;
+  }
+  .tel {
+    color: #34b4a2;
+  }
+  .ps {
+    color: #ffffff;
+  }
+  .ill {
+    color: #ffffff;
+  }
+  .sk {
+    color: #ffffff;
+  }
+  .html {
+    color: #ffffff;
+  }
+  .css {
+    color: #ffffff;
+  }
+  .js {
+    color: #ffffff;
+  }
+  .ang {
+    color: #ffffff;
+  }
+  .react {
+    color: #ffffff;
+  }
+  .gulp {
+    color: #ffffff;
+  }
 }
 
 // hacks

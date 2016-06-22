@@ -13,6 +13,8 @@
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/reset-css/reset.css" />
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+    <link rel="stylesheet" href="/bower_components/fullpage.js/jquery.fullPage.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -29,6 +31,19 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div id="particles-js"></div>
+
+    <ul class="nav">
+      <li class="picked">
+        <a href="#home"><sup>1. </sup><span>Home</span></a>
+      </li>
+      <li>
+        <a href="#portfolio"><sup>2. </sup><span>Portfolio</span></a>
+      </li>
+      <li>
+        <a href="#contact"><sup>3. </sup><span>Contact</span></a>
+      </li>
+    </ul>
 
     <!-- add a border to the viewport -->
     <div id="top"></div>
@@ -40,13 +55,14 @@
     <div id="left"></div>
     <div id="topleft"></div>
 
-    <div id="particles-js"></div>
 
-    <div class="home page">
+  <div id="fullpage">
 
+    <!-- START HOME SECTION -->
+
+    <div class="section home page" data-anchor="home">
       <div class="shapes"></div>
- 
-      
+
       <div class="container hero">
         <h2>sub header</h2>
         <div class="hero-unit">
@@ -56,15 +72,20 @@
       </div>
 
     </div>
-
-    <div class="work page">
+  
+    <!-- END HOME SECTION -->
+    <!-- START PORTFOLIO SECTION -->
+    
+    <div class="section work page" data-anchor="portfolio">
       <div class="container">
-        <div class="hero-unit">
-          <h1>work page</h1>
+        <div class="sub">
+        <h2>Portfolio</h2>
+          <p>I've worked for clients such as <span class="mcd">McDonald's</span>, <span class="vw">Volkswagen</span> and <span class="tel">Telstra</span>, using the skills i've learnt in <span class="ps">photoshop</span>, <span class="ill">illustrator</span>, <span class="sk">sketch</span>, <span class="html">html</span>, <span class="css">sass</span>, <span class="js">js/jquery</span>. Building out apps with frameworks such as <span class="ang"></span> and <span class="react">react</span> and using <span class="gulp">gulp/grunt</span> to help automate my workflow.<p> 
         </div>
       </div>
     </div>
-    
+
+  </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -78,8 +99,10 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
     <script src="/bower_components/particles.js/particles.min.js"></script>
+    <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
