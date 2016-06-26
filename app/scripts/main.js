@@ -17,7 +17,7 @@ $('#fullpage').fullpage({
     loopTop: false,
     loopHorizontal: true,
     continuousVertical: false,
-    normalScrollElements: '#element1, .element2',
+    normalScrollElements: '.element1, .element2, .element3',
     scrollOverflow: false,
     scrollOverflowOptions: null,
     touchSensitivity: 15,
@@ -43,12 +43,20 @@ $('#fullpage').fullpage({
 
     //events
     onLeave: function(index, nextIndex, direction){
-      console.log(index, nextIndex, direction);
+      setTimeout(function() {
+        console.log(index);
+      }, 2000);
     },
-    afterLoad: function(anchorLink, index){},
-    afterRender: function(){},
+    afterLoad: function(anchorLink, index){
+
+    },
+    afterRender: function(){
+
+    },
     afterResize: function(){},
-    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+
+    },
     onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
       console.log('leave');
     }
@@ -123,6 +131,7 @@ $('.shapes').css('opacity', 0);
 
 
 // Returns a random number between min (inclusive) and max (exclusive)
+// For this I want to target a random shape, apply an animation to it, then move onto another shape every few seconds.
 function getRandomArbitrary(min, max) {
   var min = 1;
   var max = 38;
@@ -198,5 +207,66 @@ function perspectiveHover() {
   // });
 }
 
+function responsiveShape (argument) {
+  var pageWidth, pageHeight;
+
+  var basePage = {
+    width: 800,
+    height: 600,
+    scale: 1,
+    scaleX: 1,
+    scaleY: 1
+  };
+
+  $(function(){
+    var $page = $('.shapes');
+    
+
+    
+    function checkSize (page, maxWidth, maxHeight, pageWidth, pageHeight) {
+      
+
+        pageHeight = $('body').height();
+        pageWidth = $('body').width();
+
+      $(window).resize(_.debounce(function () {
+
+        scalePages($page, pageWidth, pageHeight);        
+      }, 150));
+    }
+
+    $(window).resize(function(page, maxWidth, maxHeight, pageWidth, pageHeight) {
+
+        pageHeight = $('body').height();
+        pageWidth = $('body').width();
+
+      console.log(pageWidth)
+      if (pageWidth < 900) {
+        checkSize();      
+      };
+
+    });
+
+    if (pageWidth < 900) {
+      checkSize();      
+    };    
 
 
+
+  function scalePages(page, maxWidth, maxHeight) {            
+    var scaleX = 1, scaleY = 1;                      
+    scaleX = maxWidth / basePage.width;
+    scaleY = maxHeight / basePage.height;
+    basePage.scaleX = scaleX;
+    basePage.scaleY = scaleY;
+    basePage.scale = (scaleX > scaleY) ? scaleY : scaleX;
+
+    var newLeftPos = Math.abs(Math.floor(((basePage.width * basePage.scale) - maxWidth)/2));
+    var newTopPos = Math.abs(Math.floor(((basePage.height * basePage.scale) - maxHeight)/2));
+
+    page.attr('style', '-webkit-transform:scale(' + basePage.scale + ');left:' + newLeftPos + 'px;top:' + newTopPos + 'px; opacity: 1;');
+  }
+  });
+}
+
+//responsiveShape();

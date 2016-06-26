@@ -169,9 +169,10 @@ body {
   opacity: 1;
   z-index: 0;
   .particles-js-canvas-el {
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    transform: scale(1) rotate(45deg);   
+    -ms-transform: scale(1) rotate(45deg); 
+    -webkit-transform: scale(1) rotate(45deg); 
+    transform: scale(1) rotate(45deg); 
     opacity: 1;
     -webkit-animation: appear 1.4s 1;
     animation: appear 1.4s 1;
@@ -205,12 +206,16 @@ body {
   width: 100%;
   max-width: 900px;
   height: 900px;
-  overflow: auto;
+  overflow: hidden;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
   opacity: 0;
   transform: scale(1.1);
+  filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+  animation: filterAnimate 10s infinite;
+  padding: 0;
+  
   .shape {
     position: absolute;
     top: 0;
@@ -218,9 +223,8 @@ body {
     opacity: 0.6;
     //width: 100px;
     //display: none;
-    //filter: sepia(0.8) saturate(6) blur(0px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-    animation: filterAnimate 10s infinite;
+    filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    //filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     &.shape1 {
       width: 37.7px;
       height: 37.4px;
@@ -471,7 +475,7 @@ body {
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border: 2px solid $offwhite;
+    //border: 2px solid $offwhite;
   }
   h1 {
     font-size: 50px;
@@ -537,40 +541,40 @@ video#bgvid {
     }
   }
   .mcd {
-    color: #bf0c0c;
+    color: #FFC423;
   }
   .vw {
-    color: #003057;
+    color: #6195D1;
   }
   .tel {
     color: #34b4a2;
   }
   .ps {
-    color: #ffffff;
+    color: #009784;
   }
   .ill {
-    color: #ffffff;
+    color: #F87519;
   }
   .sk {
-    color: #ffffff;
+    color: #FFE898;
   }
   .html {
-    color: #ffffff;
+    color: #A9B800;
   }
   .css {
-    color: #ffffff;
+    color: #CC6699;
   }
   .js {
-    color: #ffffff;
+    color: #FAC552;
   }
   .ang {
-    color: #ffffff;
+    color: #E62A39;
   }
   .react {
-    color: #ffffff;
+    color: #5AD9FB;
   }
   .gulp {
-    color: #ffffff;
+    color: #CF4646;
   }
 }
 
@@ -587,4 +591,20 @@ video#bgvid {
   @extend %visuallyhidden;
 }
 
+
+// media queries
+
+@media (max-width: 900px) {
+  .shapes {
+    //-webkit-transform: scale(.7);
+    //-webkit-transform-origin: 0 0;
+   // width: 142.857143%;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+/* Styles */
+
+}
 
