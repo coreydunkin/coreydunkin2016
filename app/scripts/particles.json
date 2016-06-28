@@ -1,10 +1,17 @@
 {
   "particles": {
     "number": {
+<<<<<<< Updated upstream
       "value": 20,
       "density": {
         "enable": true,
         "value_area": 1400
+=======
+      "value": 10,
+      "density": {
+        "enable": true,
+        "value_area": 400
+>>>>>>> Stashed changes
       }
     },
     "color": {

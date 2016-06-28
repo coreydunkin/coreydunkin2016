@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.7.5
+3 info using node@v4.3.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData gsap
+20 silly mapToRegistry name gsap
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/gsap
+24 silly fetchNamedPackageData particle.js
+25 silly mapToRegistry name particle.js
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry uri https://registry.npmjs.org/particle.js
+29 verbose request uri https://registry.npmjs.org/particle.js
+30 verbose request no auth needed
+31 info attempt registry request try #1 at 11:05:19 AM
+32 verbose request id 21ad5924ad8d6bf2
+33 http request GET https://registry.npmjs.org/particle.js
+34 verbose request uri https://registry.npmjs.org/gsap
+35 verbose request no auth needed
+36 info attempt registry request try #1 at 11:05:19 AM
+37 verbose etag "2U3U0K4040JDKQV5R1GS2JJVE"
+38 http request GET https://registry.npmjs.org/gsap
+39 http 304 https://registry.npmjs.org/gsap
+40 verbose headers { date: 'Thu, 23 Jun 2016 01:05:20 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   etag: '"2U3U0K4040JDKQV5R1GS2JJVE"',
+40 verbose headers   age: '82',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-syd1623-SYD',
+40 verbose headers   'x-cache': 'HIT',
+40 verbose headers   'x-cache-hits': '1',
+40 verbose headers   'x-timer': 'S1466643920.006922,VS0,VE0',
+40 verbose headers   vary: 'Accept-Encoding' }
+41 silly get cb [ 304,
+41 silly get   { date: 'Thu, 23 Jun 2016 01:05:20 GMT',
+41 silly get     via: '1.1 varnish',
+41 silly get     'cache-control': 'max-age=300',
+41 silly get     etag: '"2U3U0K4040JDKQV5R1GS2JJVE"',
+41 silly get     age: '82',
+41 silly get     connection: 'keep-alive',
+41 silly get     'x-served-by': 'cache-syd1623-SYD',
+41 silly get     'x-cache': 'HIT',
+41 silly get     'x-cache-hits': '1',
+41 silly get     'x-timer': 'S1466643920.006922,VS0,VE0',
+41 silly get     vary: 'Accept-Encoding' } ]
+42 verbose etag https://registry.npmjs.org/gsap from cache
+43 verbose get saving gsap to /Users/coreydunkin/.npm/registry.npmjs.org/gsap/.cache.json
+44 verbose correctMkdir /Users/coreydunkin/.npm correctMkdir not in flight; initializing
+45 silly resolveWithNewModule gsap@1.18.5 checking installable status
+46 silly cache add args [ 'gsap@^1.18.5', null ]
+47 verbose cache add spec gsap@^1.18.5
+48 silly cache add parsed spec Result {
+48 silly cache add   raw: 'gsap@^1.18.5',
+48 silly cache add   scope: null,
+48 silly cache add   name: 'gsap',
+48 silly cache add   rawSpec: '^1.18.5',
+48 silly cache add   spec: '>=1.18.5 <2.0.0',
+48 silly cache add   type: 'range' }
+49 silly addNamed gsap@>=1.18.5 <2.0.0
+50 verbose addNamed ">=1.18.5 <2.0.0" is a valid semver range for gsap
+51 silly addNameRange { name: 'gsap', range: '>=1.18.5 <2.0.0', hasData: false }
+52 silly mapToRegistry name gsap
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/gsap
+56 verbose addNameRange registry:https://registry.npmjs.org/gsap not in flight; fetching
+57 verbose get https://registry.npmjs.org/gsap not expired, no request
+58 silly addNameRange number 2 { name: 'gsap', range: '>=1.18.5 <2.0.0', hasData: true }
+59 silly addNameRange versions [ 'gsap',
+59 silly addNameRange   [ '1.13.2',
+59 silly addNameRange     '1.14.1',
+59 silly addNameRange     '1.14.2',
+59 silly addNameRange     '1.15.0',
+59 silly addNameRange     '1.15.1',
+59 silly addNameRange     '1.16.0',
+59 silly addNameRange     '1.16.1',
+59 silly addNameRange     '1.17.0',
+59 silly addNameRange     '1.18.0',
+59 silly addNameRange     '1.18.2',
+59 silly addNameRange     '1.18.3',
+59 silly addNameRange     '1.18.4',
+59 silly addNameRange     '1.18.5' ] ]
+60 silly addNamed gsap@1.18.5
+61 verbose addNamed "1.18.5" is a plain semver version for gsap
+62 silly mapToRegistry name gsap
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/gsap
+66 verbose addRemoteTarball https://registry.npmjs.org/gsap/-/gsap-1.18.5.tgz not in flight; adding
+67 verbose addRemoteTarball [ 'https://registry.npmjs.org/gsap/-/gsap-1.18.5.tgz',
+67 verbose addRemoteTarball   '9084130522be09d67aafcf3c09f4d2add2eed656' ]
+68 info retry fetch attempt 1 at 11:05:20 AM
+69 info attempt registry request try #1 at 11:05:20 AM
+70 http fetch GET https://registry.npmjs.org/gsap/-/gsap-1.18.5.tgz
+71 http fetch 200 https://registry.npmjs.org/gsap/-/gsap-1.18.5.tgz
+72 silly fetchAndShaCheck shasum 9084130522be09d67aafcf3c09f4d2add2eed656
+73 verbose addTmpTarball /var/folders/0l/74s921414v1fm4tgl436wjp40000gr/T/npm-36264-257cf68c/registry.npmjs.org/gsap/-/gsap-1.18.5.tgz not in flight; adding
+74 verbose addTmpTarball already have metadata; skipping unpack for gsap@1.18.5
+75 verbose correctMkdir /Users/coreydunkin/.npm correctMkdir not in flight; initializing
+76 silly cache afterAdd gsap@1.18.5
+77 verbose afterAdd /Users/coreydunkin/.npm/gsap/1.18.5/package/package.json not in flight; writing
+78 verbose correctMkdir /Users/coreydunkin/.npm correctMkdir not in flight; initializing
+79 verbose afterAdd /Users/coreydunkin/.npm/gsap/1.18.5/package/package.json written
+80 http 404 https://registry.npmjs.org/particle.js
+81 verbose headers { 'content-type': 'application/json',
+81 verbose headers   'cache-control': 'max-age=0',
+81 verbose headers   'content-length': '2',
+81 verbose headers   'accept-ranges': 'bytes',
+81 verbose headers   date: 'Thu, 23 Jun 2016 01:05:20 GMT',
+81 verbose headers   via: '1.1 varnish',
+81 verbose headers   connection: 'keep-alive',
+81 verbose headers   'x-served-by': 'cache-syd1624-SYD',
+81 verbose headers   'x-cache': 'MISS',
+81 verbose headers   'x-cache-hits': '0',
+81 verbose headers   'x-timer': 'S1466643920.008273,VS0,VE882',
+81 verbose headers   vary: 'Accept-Encoding' }
+82 silly get cb [ 404,
+82 silly get   { 'content-type': 'application/json',
+82 silly get     'cache-control': 'max-age=0',
+82 silly get     'content-length': '2',
+82 silly get     'accept-ranges': 'bytes',
+82 silly get     date: 'Thu, 23 Jun 2016 01:05:20 GMT',
+82 silly get     via: '1.1 varnish',
+82 silly get     connection: 'keep-alive',
+82 silly get     'x-served-by': 'cache-syd1624-SYD',
+82 silly get     'x-cache': 'MISS',
+82 silly get     'x-cache-hits': '0',
+82 silly get     'x-timer': 'S1466643920.008273,VS0,VE882',
+82 silly get     vary: 'Accept-Encoding' } ]
+83 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/particle.js
+83 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+83 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+83 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+83 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+83 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+83 silly fetchPackageMetaData     at Request.emit (events.js:172:7)
+83 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+83 silly fetchPackageMetaData     at emitOne (events.js:82:20)
+83 silly fetchPackageMetaData     at Request.emit (events.js:169:7)
+83 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+83 silly fetchPackageMetaData  error for particle.js@2.0.0 { [Error: Registry returned 404 for GET on https://registry.npmjs.org/particle.js] pkgid: 'particle.js', statusCode: 404, code: 'E404' }
+84 silly rollbackFailedOptional Starting
+85 silly rollbackFailedOptional Finishing
+86 silly runTopLevelLifecycles Starting
+87 silly runTopLevelLifecycles Finishing
+88 silly install printInstalled
+89 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/particle.js
+89 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+89 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+89 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+89 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+89 verbose stack     at emitTwo (events.js:87:13)
+89 verbose stack     at Request.emit (events.js:172:7)
+89 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+89 verbose stack     at emitOne (events.js:82:20)
+89 verbose stack     at Request.emit (events.js:169:7)
+89 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+90 verbose statusCode 404
+91 verbose pkgid particle.js
+92 verbose cwd /Users/coreydunkin/Documents/working/coreydunkin2016
+93 error Darwin 15.4.0
+94 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+95 error node v4.3.1
+96 error npm  v3.7.5
+97 error code E404
+98 error 404 Registry returned 404 for GET on https://registry.npmjs.org/particle.js
+99 error 404
+100 error 404 'particle.js' is not in the npm registry.
+101 error 404 You should bug the author to publish it (or use the name yourself!)
+102 error 404 Note that you can also install from a
+103 error 404 tarball, folder, http url, or git url.
+104 verbose exit [ 1, true ]

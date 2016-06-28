@@ -6,7 +6,11 @@
     "modernizr": "~2.8.1",
     "particles.js": "^2.0.0",
     "animate.css": "^3.5.2",
+<<<<<<< Updated upstream
     "masonry": "^4.1.0"
+=======
+    "glfx-bower": "0.0.1"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "chai": "^3.5.0",
