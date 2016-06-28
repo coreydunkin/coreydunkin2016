@@ -35,13 +35,13 @@
 
     <ul class="nav">
       <li class="picked">
-        <a href="#home"><sup>1. </sup><span>Home</span></a>
+        <a href="#home" class="home"><sup>1. </sup><span>Home</span></a>
       </li>
       <li>
-        <a href="#portfolio"><sup>2. </sup><span>Portfolio</span></a>
+        <a href="#portfolio" class="portfolio"><sup>2. </sup><span>Portfolio</span></a>
       </li>
       <li>
-        <a href="#contact"><sup>3. </sup><span>Contact</span></a>
+        <a href="#contact" class="contact"><sup>3. </sup><span>Contact</span></a>
       </li>
     </ul>
 
@@ -61,7 +61,10 @@
     <!-- START HOME SECTION -->
 
     <div class="section home page" data-anchor="home">
-      <div class="shapes"></div>
+      
+      <div class="shapes-container">
+        <div class="shapes"></div>
+      </div>
 
       <div class="container hero">
         <h2>sub header</h2>
@@ -84,9 +87,21 @@
         </div>
 
 
-        <ul class="work">
-          <li></li>
-        </ul>
+<div class="grid">
+
+  <div class="grid-sizer"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2 grid-item--height2"></div>
+  <div class="grid-item grid-item--height3"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item grid-item--width3"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item grid-item--width2 grid-item--height3"></div>
+
+</div>
+
       </div>
     </div>
 
@@ -95,7 +110,7 @@
       <div class="container">
         <div class="sub">
         <h2>Contact</h2>
-          <p>I've worked for clients such as <span class="mcd">McDonald's</span>, <span class="vw">Volkswagen</span> and <span class="tel">Telstra</span>, using the skills i've learnt in <span class="ps">photoshop</span>, <span class="ill">illustrator</span>, <span class="sk">sketch</span>, <span class="html">html</span>, <span class="css">sass</span>, <span class="js">js/jquery</span>. Building out apps with frameworks such as <span class="ang"></span> and <span class="react">react</span> and using <span class="gulp">gulp/grunt</span> to help automate my workflow.<p> 
+          <p>Contact me<p> 
         </div>
 
 
@@ -118,6 +133,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/masonry/dist/masonry.pkgd.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>

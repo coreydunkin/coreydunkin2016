@@ -31,7 +31,7 @@ $('#fullpage').fullpage({
     //Design
     controlArrows: true,
     verticalCentered: true,
-    paddingTop: '3em',
+    paddingTop: '0em',
     paddingBottom: '10px',
     fixedElements: '#header, .footer',
     responsiveWidth: 0,
@@ -208,65 +208,77 @@ function perspectiveHover() {
 }
 
 function responsiveShape (argument) {
-  var pageWidth, pageHeight;
+var pageWidth, pageHeight;
 
-  var basePage = {
-    width: 800,
-    height: 600,
-    scale: 1,
-    scaleX: 1,
-    scaleY: 1
+var basePage = {
+  width: 900,
+  height: 900,
+  scale: 1.1,
+  scaleX: 1.1,
+  scaleY: 1.1
+};
+
+$(function(){
+  var $page = $('.shapes');
+  
+  getPageSize();
+  scalePages($page, pageWidth, pageHeight);
+  
+  //using underscore to delay resize method till finished resizing window
+  $(window).resize(_.debounce(function () {
+    getPageSize();            
+    scalePages($page, pageWidth, pageHeight);
+  }, 150));
+  
+
+function getPageSize() {
+  pageHeight = $('.shapes-container').height();
+  pageWidth = $('.shapes-container').width();
+}
+
+function scalePages(page, maxWidth, maxHeight) {            
+  var scaleX = 1.1, scaleY = 1.1;                      
+  scaleX = maxWidth / basePage.width;
+  scaleY = maxHeight / basePage.height;
+  basePage.scaleX = scaleX;
+  basePage.scaleY = scaleY;
+  basePage.scale = (scaleX > scaleY) ? scaleY : scaleX;
+
+  var newLeftPos = Math.abs(Math.floor(((basePage.width * basePage.scale) - maxWidth)/2));
+  var newTopPos = Math.abs(Math.floor(((basePage.height * basePage.scale) - maxHeight)/2));
+
+  page.attr('style', '-webkit-transform:scale(' + basePage.scale + ');opacity: 1;');
+}
+});
+}
+
+function checkSize () {
+  var windowWidth = $(window).width();
+  if (windowWidth < 901) {
+    responsiveShape();
   };
+  console.log(windowWidth);
+}
 
-  $(function(){
-    var $page = $('.shapes');
-    
+$(window).resize(function() {
+  //resize just happened, pixels changed
+  checkSize();
+});
 
-    
-    function checkSize (page, maxWidth, maxHeight, pageWidth, pageHeight) {
-      
+checkSize();
 
-        pageHeight = $('body').height();
-        pageWidth = $('body').width();
-
-      $(window).resize(_.debounce(function () {
-
-        scalePages($page, pageWidth, pageHeight);        
-      }, 150));
-    }
-
-    $(window).resize(function(page, maxWidth, maxHeight, pageWidth, pageHeight) {
-
-        pageHeight = $('body').height();
-        pageWidth = $('body').width();
-
-      console.log(pageWidth)
-      if (pageWidth < 900) {
-        checkSize();      
-      };
-
-    });
-
-    if (pageWidth < 900) {
-      checkSize();      
-    };    
-
-
-
-  function scalePages(page, maxWidth, maxHeight) {            
-    var scaleX = 1, scaleY = 1;                      
-    scaleX = maxWidth / basePage.width;
-    scaleY = maxHeight / basePage.height;
-    basePage.scaleX = scaleX;
-    basePage.scaleY = scaleY;
-    basePage.scale = (scaleX > scaleY) ? scaleY : scaleX;
-
-    var newLeftPos = Math.abs(Math.floor(((basePage.width * basePage.scale) - maxWidth)/2));
-    var newTopPos = Math.abs(Math.floor(((basePage.height * basePage.scale) - maxHeight)/2));
-
-    page.attr('style', '-webkit-transform:scale(' + basePage.scale + ');left:' + newLeftPos + 'px;top:' + newTopPos + 'px; opacity: 1;');
-  }
+function urlChange (argument) {
+  $(window).on('hashchange', function(e){
+    console.log('do something');
   });
 }
 
-//responsiveShape();
+urlChange();
+
+// work section
+
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
