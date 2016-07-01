@@ -219,19 +219,19 @@ body {
 /* The animation code */
 @keyframes filterAnimate {
   0% {
-    filter: sepia(0.6) saturate(3) blur(1px); /* Same syntax as box-shadow */
+    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
   25% {
-    filter: sepia(0.1) saturate(1) blur(0.5px); /* Same syntax as box-shadow */
+    filter: sepia(0.1) saturate(1) blur(0.5px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }  
   50% {
-    filter: sepia(0.4) saturate(5) blur(0px); /* Same syntax as box-shadow */
+    filter: sepia(0.4) saturate(5) blur(0px) drop-shadow( 0px 0px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
   75% {
-    filter: sepia(0.1) saturate(1) blur(0.5px); /* Same syntax as box-shadow */
+    filter: sepia(0.1) saturate(1) blur(0.5px) drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }  
   100% {
-    filter: sepia(0.6) saturate(3) blur(1px); /* Same syntax as box-shadow */
+    filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
 }
 .shapes-container {
@@ -258,10 +258,8 @@ body {
   opacity: 0;
   transform: scale(1.1);
   filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-<<<<<<< Updated upstream
   animation: filterAnimate 10s infinite;
   padding: 0;
-<<<<<<< Updated upstream
 
   width:100%;
   max-width: 900px;
@@ -274,13 +272,6 @@ body {
   transition: all 500ms ease-in-out !important;
   //position: absolute;
 
-=======
-  
-=======
-  //animation: filterAnimate 10s infinite;
-  transform: translateZ(0);
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   .shape {
     position: absolute;
     top: 0;
@@ -288,14 +279,8 @@ body {
     opacity: 0.6;
     //width: 100px;
     //display: none;
-<<<<<<< Updated upstream
     filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     //filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-=======
-    filter: drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-    //
-    transform: translateZ(0);
->>>>>>> Stashed changes
     &.shape1 {
       width: 37.7px;
       height: 37.4px;
