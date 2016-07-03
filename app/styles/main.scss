@@ -199,8 +199,17 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  opacity: 1;
+  opacity: 0;
   z-index: 0;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-duration: 3s;
+  -moz-animation-delay: 0.5s;
+  animation-duration: 3s;
+  animation-delay: 0.5s;     
+  &.fadeIn {
+    opacity: 1;
+  }  
   .particles-js-canvas-el {
     transform: scale(1) rotate(45deg);   
     -ms-transform: scale(1) rotate(45deg); 
@@ -240,7 +249,7 @@ body {
   top:20px;
   right:20px;
   bottom:20px;
-  overflow: hidden;
+  //overflow: hidden;
   //margin-top: -40px;
 }
 .shapes {
@@ -255,10 +264,10 @@ body {
   margin: 0 auto;
 
 
-  opacity: 0;
+  opacity: 1;
   transform: scale(1.1);
-  filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
-  animation: filterAnimate 10s infinite;
+  filter: sepia(0.4) saturate(3) blur(0px); /* Same syntax as box-shadow */
+  //animation: filterAnimate 10s infinite;
   padding: 0;
 
   width:100%;
@@ -279,197 +288,273 @@ body {
     opacity: 0.6;
     //width: 100px;
     //display: none;
-    filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
+    //filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     //filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
     &.shape1 {
       width: 37.7px;
       height: 37.4px;
-      transform: translate(209px, 430px);
+      //transform: translate(209px, 430px);
+      left: 209px;
+      top: 430px;
     }
     &.shape2 {
       width: 92.674px;
       height: 93.308px;
-      transform: translate(722px, 374px);
+      //transform: translate(722px, 374px);
+      left: 722px;
+      top: 374px;
     }
     &.shape3 {
       width: 92.523px;
       height: 92.141px;
-      transform: translate(724px, 466px);
+      //transform: translate(724px, 466px);
+      left: 724px;
+      top: 466px;
     }
     &.shape4 {
       width: 92px;
       height: 112px;
-      transform: translate(631px, 466px);
+      //transform: translate(631px, 466px);
+      left: 631px;
+      top: 466px;
     }
     &.shape5 {
       width: 92px;
       height: 185.634px;
-      transform: translate(631px, 282px);
+      //transform: translate(631px, 282px);
+      left: 631px;
+      top: 282px;
     }
     &.shape6 {
       width: 71.971px;
       height: 49.118px;
-      transform: translate(631px, 578px);
+      //transform: translate(631px, 578px);
+      left: 631px;
+      top: 578px;
     }
     &.shape7 {
       width: 23.459px;
       height: 46.919px;
-      transform: translate(631px, 605px);
+      //transform: translate(631px, 605px);
+      left: 631px;
+      top: 605px;
     }
     &.shape8 {
       width: 181px;
       height: 143px;
-      transform: translate(450px, 578px);
+      //transform: translate(450px, 578px);
+      left: 450px;
+      top: 578px;
     }
     &.shape9 {
       width: 155.398px;
       height: 112px;
-      transform: translate(450px, 466px);
+      //transform: translate(450px, 466px);
+      left: 450px;
+      top: 466px;
     }
     &.shape10 {
       width: 137.221px;
       height: 112px;
-      transform: translate(495px, 466px);
+      //transform: translate(495px, 466px);
+      left: 495px;
+      top: 466px;
     }
     &.shape11 {
       width: 181px;
       height: 204.074px;
-      transform: translate(450px, 262px);
+      //transform: translate(450px, 262px);
+      left: 450px;
+      top: 262px;
     }
     &.shape12 {
       width: 161.48px;
       height: 235.217px;
-      transform: translate(450px, 187px);
+      //transform: translate(450px, 187px);
+      left: 450px;
+      top: 187px;
     }
     &.shape13 {
       width: 87.078px;
       height: 107.141px;
-      transform: translate(450px, 167px);
+      //transform: translate(450px, 167px);
+      left: 450px;
+      top: 167px;
     }
     &.shape14 {
       width: 66.402px;
       height: 65.638px;
-      transform: translate(450px, 101px);
+      //transform: translate(450px, 101px);
+      left: 450px;
+      top: 101px;
     }
     &.shape15 {
       width: 65.976px;
       height: 65.776px;
-      transform: translate(450px, 657px);
+      //transform: translate(450px, 657px);
+      left: 450px;
+      top: 657px;
     }
     &.shape16 {
       width: 43.829px;
       height: 22.025px;
-      transform: translate(517px, 721px);
+      //transform: translate(517px, 721px);
+      left: 517px;
+      top: 721px;
     }
     &.shape17 {
       width: 87.749px;
       height: 109.141px;
-      transform: translate(450px, 721px);
+      //transform: translate(450px, 721px);
+      left: 450px;
+      top: 721px;
     }
     &.shape18 {
       width: 64.221px;
       height: 65.566px;
-      transform: translate(372px, 67px);
+      //transform: translate(372px, 67px);
+      left: 372px;
+      top: 67px;
     }
     &.shape19 {
       width: 160.221px;
       height: 181.141px;
-      transform: translate(275px, 133px);
+      //transform: translate(275px, 133px);
+      left: 275px;
+      top: 133px;
     }
     &.shape20 {
       width: 74.08px;
       height: 148.569px;
-      transform: translate(364px, 238px);
+      //transform: translate(364px, 238px);
+      left: 364px;
+      top: 238px;
     }
     &.shape21 {
       width: 155px;
       height: 202.658px;
-      transform: translate(207px, 228px);
+      //transform: translate(207px, 228px);
+      left: 207px;
+      top: 228px;
     }
     &.shape22 {
       width: 48.221px;
       height: 94.197px;
-      transform: translate(160px, 297px);
+      //transform: translate(160px, 297px);
+      left: 160px;
+      top: 297px;
     }
     &.shape23 {
       width: 190.573px;
       height: 117.898px;
-      transform: translate(247px, 313px);
+      //transform: translate(247px, 313px);
+      left: 247px;
+      top: 313px;
     }
     &.shape24 {
       width: 43.221px;
       height: 43.116px;
-      transform: translate(394px, 388px);
+      //transform: translate(394px, 388px);
+      left: 394px;
+      top: 388px;
     }
     &.shape25 {
       width: 116.221px;
       height: 111px;
-      transform: translate(321px, 431px);
+      //transform: translate(321px, 431px);
+      left: 321px;
+      top: 431px;
     }
     &.shape26 {
       width: 134.245px;
       height: 87.366px;
-      transform: translate(74px, 344px);
+      //transform: translate(74px, 344px);
+      left: 74px;
+      top: 344px;
     }
     &.shape27 {
       width: 38.352px;
       height: 39.92px;
-      transform: translate(208px, 392px);
+      //transform: translate(208px, 392px);
+      left: 208px;
+      top: 392px;
     }
     &.shape28 {
       width: 134.221px;
       height: 86.059px;
-      transform: translate(74px, 431px);
+      //transform: translate(74px, 431px);
+      left: 74px;
+      top: 431px;
     }
     &.shape29 {
       width: 48.05px;
       height: 72.998px;
-      transform: translate(160px, 469px);
+      //transform: translate(160px, 469px);
+      left: 160px;
+      top: 469px;
     }
     &.shape30 {
       width: 22.221px;
       height: 22.141px;
-      transform: translate(186px, 542px);
+      //transform: translate(186px, 542px);
+      left: 186px;
+      top: 542px;
     }
     &.shape31 {
       width: 73.915px;
       height: 48.218px;
-      transform: translate(208px, 542px);
+      //transform: translate(208px, 542px);
+      left: 208px;
+      top: 542px;
     }
     &.shape32 {
       width: 203.221px;
       height: 144px;
-      transform: translate(233px, 542px);
+      //transform: translate(233px, 542px);
+      left: 233px;
+      top: 542px;
     }
     &.shape33 {
       width: 107.221px;
       height: 108.142px;
-      transform: translate(329px, 686px);
+      //transform: translate(329px, 686px);
+      left: 329px;
+      top: 686px;
     }
     &.shape34 {
       width: 78.221px;
       height: 79.141px;
-      transform: translate(359px, 542px);
+      //transform: translate(359px, 542px);
+      left: 359px;
+      top: 542px;
     }
     &.shape35 {
       width: 146.917px;
       height: 73.145px;
-      transform: translate(247px, 431px);
+      //transform: translate(247px, 431px);
+      left: 247px;
+      top: 431px;
     }
     &.shape36 {
       width: 112.309px;
       height: 111px;
-      transform: translate(207px, 431px);
+      //transform: translate(207px, 431px);
+      left: 207px;
+      top: 431px;
     }
     &.shape37 {
       width: 77.062px;
       height: 38.114px;
-      transform: translate(281px, 504px);
+      //transform: translate(281px, 504px);
+      left: 281px;
+      top: 504px;
     }
     &.shape38 {
       width: 81.062px;
       height: 25.114px;
-      transform: translate(578px, 578px);
+      //transform: translate(578px, 578px);
+      left: 578px;
+      top: 578px;
     }
   }
 }
@@ -493,11 +578,18 @@ body {
   &.hero {
     width: 100%;
     height: 300px;
-    overflow: auto;
+    //overflow: auto;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     overflow: hidden;
+    opacity: 0;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-duration: 3s;
+    -moz-animation-delay: 2s;
+    animation-duration: 3s;
+    animation-delay: 2s;    
     h2 {
       text-align: center;
       font-family: 'merriweather', serif;
@@ -512,7 +604,7 @@ body {
 .hero-unit {
   margin: 50px auto 0 auto;
   //width: 100%;
-  max-width: 400px;
+  max-width: 460px;
   //display: inline-block;
   margin: 0 auto;
   font-size: 18px;
