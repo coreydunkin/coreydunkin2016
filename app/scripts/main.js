@@ -296,17 +296,20 @@ function shapesFloat (argument) {
     //   return anime.random(-5, 5) + 'deg';
     // },
     translateX: function(el, index) {
-      return anime.random(-3, 3) + 'px';
+      return anime.random(-5, 5) + 'px';
     },
     translateY: function(el, index) {
-      return anime.random(-3, 3) + 'px';
+      return anime.random(-5, 5) + 'px';
     },
     //scale: function() { return anime.random(10, 20) / 10; },
     //duration: function() { return anime.random(3000, 8000); },
     duration: 2000,
     complete: function() {
-      shapesFloat();
-      console.log('repeat');
+      setTimeout(function() {
+        shapesFloat();
+      }, 5000);
+      
+      //console.log('repeat');
     }
   });
 }
@@ -406,3 +409,45 @@ function urlChange (argument) {
 urlChange();
 
 // work section
+
+$('.list').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+$('.card').on('hover', function(event) {
+  event.preventDefault();
+  /* Act on the event */
+});
+

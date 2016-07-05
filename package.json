@@ -1,7 +1,7 @@
 {
   "private": true,
   "engines": {
-    "node": ">=4"
+    "node": ">=1"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
@@ -28,8 +28,7 @@
     "main-bower-files": "^2.5.0",
     "wiredep": "^2.2.2",
     "gsap": "^1.18.5",
-    "particle.js": "2.0.0",
-    "masonry": "^2.0.2"
+    "particles.js": "2.0.0"
   },
   "eslintConfig": {
     "env": {
