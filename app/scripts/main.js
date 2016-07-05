@@ -446,8 +446,10 @@ $('.list').slick({
   ]
 });
 
-$('.card').on('hover', function(event) {
+$('.card figure').on('mouseover', function(event) {
   event.preventDefault();
   /* Act on the event */
+}).on('mouseout', function (event) {
+  // body...
 });
 

@@ -732,35 +732,35 @@ video#bgvid {
   margin: 0 auto;
   .item {
     width: 25%;
-    height: 400px;
+    height: 650px;
     position: relative;
     perspective: 800px;
+    margin: 10px;
     .card {
       width: 100%;
       height: 100%;
       position: absolute;
       transform-style: preserve-3d;
       transition: transform 1s;
-    }
-    .card figure {
-      margin: 0;
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      &.front {
-        background: red;
+      .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        background: rgba(0,0,0,0.60);
+        width: 100%;
+        height: 100%;
       }
-      &.back {
-        background: blue;
-        transform: rotateY(180deg);
+      .image {
+        background: grey;
+        height: 100%;
+        width: 100%;
+        background-image: url(https://d13yacurqjgara.cloudfront.net/users/13774/screenshots/2818638/cultofclick.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
-      &.flipped {
-        transform: rotateY( 180deg );
-      } 
     }
-
   }
 }
 
