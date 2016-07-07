@@ -400,21 +400,64 @@ $(window).resize(function() {
 
 checkSize();
 
-function urlChange (argument) {
+
+
+function urlChange (checkURL) {
+
+  function checkUrl () {
+      if (window.location.hash == '#portfolio') {
+        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeOutDown').addClass('animated fadeInUp');
+      } else{
+        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeInUp').addClass('fadeOutDown');
+      };
+  }
+
   $(window).on('hashchange', function(e){
-    console.log('do something');
+    checkUrl();
   });
 }
 
 urlChange();
 
+
 // work section
 
 $('.list').slick({
-  dots: true,
+  dots: false,
   infinite: false,
-  speed: 300,
-  slidesToShow: 1
+  speed: 500,
+  waitForAnimate: true
+});
+
+
+
+
+// On before slide change
+$('.list').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+
+  console.log(nextSlide);
+  var getSlide = $('[data-slick-index='+nextSlide+']');
+  var lastSlide = $('[data-slick-index='+currentSlide+']');
+
+  if (nextSlide > currentSlide) {
+    
+    $(getSlide).find('.info, .desktop, .mobile').addClass('animated fadeInRight');
+  } else{
+    
+    $(getSlide).find('.info, .desktop, .mobile').addClass('animated fadeInLeft');
+  };
+});
+
+$('.list').on('afterChange', function(event, slick, currentSlide, nextSlide){
+  
+  console.log(nextSlide);
+  var prevSlide = currentSlide-1;
+  var newSlide = currentSlide+1;
+  var getSlide = $('[data-slick-index='+newSlide+']');
+  var lastSlide = $('[data-slick-index='+prevSlide+']');
+
+  $(lastSlide).find('.info, .desktop, .mobile').removeClass('animated fadeInRight fadeInLeft fadeInUp fadeOutDown');
+  $(getSlide).find('.info, .desktop, .mobile').removeClass('animated fadeInRight fadeInLeft fadeInUp fadeOutDown');
 });
 
 $('.card figure').on('mouseover', function(event) {

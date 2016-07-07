@@ -605,8 +605,8 @@ body {
   font-weight: 200;
   line-height: 30px;
 
-  outline: 1px solid $offwhite;
-  outline-offset: 2px;
+  outline: 5px solid $offwhite;
+  outline-offset: 5px;
   border: 1px solid $offwhite;
   padding: 40px 60px;
   position: relative;
@@ -684,7 +684,6 @@ video#bgvid {
       line-height: 1.4em;
       cursor: pointer;
     }
-  }
   .mcd {
     color: lighten( #FFC423, 25%);
   }
@@ -721,43 +720,100 @@ video#bgvid {
   .gulp {
     color: lighten( #CF4646, 25%);
   }
+  }
 }
 
 .slick-list {
-  overflow: auto;
+  overflow: hidden;
 }
 
 .list {
-  max-width: 1200px;
   width: 100%;
   margin: 50px auto;
   .item {
     width: 100%;
-    height: 650px;
+    height: 550px;
     position: relative;
     perspective: 800px;
     margin: 10px;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    &.mcd {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-mcd.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-mcd-mobile.jpg);
+          }
+        }
+      }
+    }
+    &.dfrwomen {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-dfrwomen.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-dfrwomen-mobile.jpg);
+          }
+        }
+      }
+    }        
     .card {
+      margin: 0 auto;
+      max-width: 1200px;
       width: 100%;
       height: 100%;
-      position: absolute;
+      position: relative;
       transform-style: preserve-3d;
       transition: transform 1s;
       .info {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 0;
         opacity: 1;
         width: 35%;
         height: auto;
+        z-index: 20;
+        opacity: 0;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 0.8s;
+        -moz-animation-duration: 1s;
+        -moz-animation-delay: 0.8s;
+        animation-duration: 1s;
+        animation-delay: 0.8s;  
+        .num {
+          display: inline-block;
+          padding: 10px;
+          border: 1px solid white;
+          background: rgba(0,0,0,0.6);
+          outline: 3px solid $offwhite;
+          outline-offset: 0px;
+          font-family: 'merriweather', serif;
+          font-style: italic;
+          font-weight: 300;
+          font-size: 40px;
+          position: absolute;
+          top: -250px;
+          right: 30px;
+          line-height: normal;
+          display: none;
+        }
         .info-text {
           padding: 20px;
           border: 1px solid white;
           margin-top: 20px;
           background: rgba(0,0,0,0.6);
-          outline: 1px solid $offwhite;
-          outline-offset: 2px;
-
+          outline: 5px solid $offwhite;
+          outline-offset: 5px;
         }
         h2 {
           font-family: 'merriweather', serif;
@@ -777,17 +833,40 @@ video#bgvid {
       }
       .image {
         width: 70%;
-        height: 100%;
+        height: 90%;
         float: right;
         background: grey;
         background-image: url(../images/work-mcd.jpg);
-        background-size: auto 100%;
+        background-size: 100% auto;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: top center;
         padding: 10px;
-        outline: 1px solid $offwhite;
-        outline-offset: 2px;
         border: 1px solid $offwhite;
+        opacity: 0;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 0.5s;
+        -moz-animation-duration: 1s;
+        -moz-animation-delay: 0.5s;
+        animation-duration: 1s;
+        animation-delay: 0.5s;        
+        &.mobile {
+          background-image: url(../images/work-mcd-mobile.jpg);
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          background-position: top center;
+          position: absolute;
+          width: 25%;
+          height: 85%;
+          right: 15px;
+          bottom: 5%;
+          box-shadow: 0px 0px 25px rgba(0,0,0,0.35);
+          -webkit-animation-duration: 1.2s;
+          -webkit-animation-delay: 0.8s;
+          -moz-animation-duration: 1.2s;
+          -moz-animation-delay: 0.8s;
+          animation-duration: 1.2s;
+          animation-delay: 0.8s;  
+        }
       }
     }
   }
@@ -845,6 +924,10 @@ video#bgvid {
 
 
 // media queries
+
+@media (max-width: 1440px) {
+
+}
 
 @media (max-width: 900px) {
   .shapes {
