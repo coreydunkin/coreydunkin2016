@@ -6,7 +6,8 @@
     "modernizr": "~2.8.1",
     "particles.js": "^2.0.0",
     "animate.css": "^3.5.2",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "slideout.js": "0.0.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",

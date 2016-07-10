@@ -28,7 +28,8 @@
     "main-bower-files": "^2.5.0",
     "wiredep": "^2.2.2",
     "gsap": "^1.18.5",
-    "particles.js": "2.0.0"
+    "particles.js": "2.0.0",
+    "slideout.js": "0.0.7"
   },
   "eslintConfig": {
     "env": {

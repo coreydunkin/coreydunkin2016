@@ -131,6 +131,61 @@ body {
   }
 }
 
+// mobile menu
+#menu, .toggle-button {
+  //display: none;
+}
+
+.toggle-button {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position:relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.toggle-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
+  border: none;
+  background: none;
+  color: $offwhite;
+  font-size: 26px;
+  font-weight: bold;  
+}
+
 .nav {
   position: fixed;
   right: 10px;
@@ -244,7 +299,7 @@ body {
   right:20px;
   bottom:20px;
   //overflow: hidden;
-  //margin-top: -40px;
+  //margin-top: -40px; 
 }
 .shapes {
   /*width: 100%;
@@ -255,6 +310,8 @@ body {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;*/
   
+  
+
   margin: 0 auto;
 
 
@@ -872,6 +929,38 @@ video#bgvid {
   }
 }
 
+.contact-card {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  height: 250px;
+  padding: 20px;
+  border: 1px solid white;
+  background: rgba(0,0,0,0.6);
+  outline: 5px solid $offwhite;
+  outline-offset: 5px;
+  text-align: center;
+  font-family: 'merriweather', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  .contact-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; 
+  }
+  p {
+    margin-top: 8px;
+    line-height: normal;
+    a {
+      color: white;
+      text-decoration: none;
+      
+    }
+  }
+}
+
 // portfolio section
 /* ---- grid ---- */
 * { box-sizing: border-box; }
@@ -930,6 +1019,15 @@ video#bgvid {
 }
 
 @media (max-width: 900px) {
+  .nav {
+    //display: none;
+  }
+  #menu, .toggle-button {
+    //display: block;
+  }
+  .toggle-button {
+    display: block;
+  }
   .shapes {
     //-webkit-transform: scale(.7);
     //-webkit-transform-origin: 0 0;

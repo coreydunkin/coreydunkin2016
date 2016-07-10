@@ -11,7 +11,17 @@ function particlesLoaded() {
   $('#particles-js').addClass('animated fadeInUp');
 }
 
-
+var slideout = new Slideout({
+  'panel': document.getElementById('panel'),
+  'menu': document.getElementById('menu'),
+  'side': 'right',
+  'padding': 256,
+  'tolerance': 70
+});
+// Toggle button
+document.querySelector('.toggle-button').addEventListener('click', function() {
+  slideout.toggle();
+});
 // setting up the fullpager
 $('#fullpage').fullpage({
     // nav
@@ -406,10 +416,18 @@ function urlChange (checkURL) {
 
   function checkUrl () {
       if (window.location.hash == '#portfolio') {
-        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeOutDown').addClass('animated fadeInUp');
+        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeOut').addClass('animated fadeIn');
+        $('.list').addClass('animated fadeInUp');
       } else{
-        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeInUp').addClass('fadeOutDown');
+
+        $('.slick-active').find('.info, .desktop, .mobile').removeClass('fadeIn').addClass('fadeOut');
       };
+
+      if (window.location.hash == '#home') {
+        //$('.hero').removeClass('animated fadeOutUp').addClass('animated fadeInDown');
+      } else{
+        //$('.hero').removeClass('fadeInDown').addClass('animated fadeOutUp');
+      };     
   }
 
   $(window).on('hashchange', function(e){
