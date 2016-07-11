@@ -66,7 +66,7 @@ $('#fullpage').fullpage({
 
     //events
     onLeave: function(index, nextIndex, direction){
-
+      slideout.close();
     },
     afterLoad: function(anchorLink, index){
 
@@ -79,7 +79,7 @@ $('#fullpage').fullpage({
 
     },
     onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-      console.log('leave');
+      slideout.close();
     }
 });
 

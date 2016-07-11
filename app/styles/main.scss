@@ -155,7 +155,10 @@ body {
   width: 256px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  display: none;
+  //display: none;
+  background: #333;
+  transform:translateX(256px);
+  transition: all 0.3s ease;
 }
 
 .slideout-panel {
@@ -172,6 +175,8 @@ body {
 
 .slideout-open .slideout-menu {
   display: block;
+  transform:translateX(0px);
+  z-index: 999;
 }
 
 .toggle-button {
@@ -269,6 +274,7 @@ body {
     animation: appear 1.4s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+
   }
 }
 
@@ -1019,14 +1025,19 @@ video#bgvid {
 }
 
 @media (max-width: 900px) {
-  .nav {
-    //display: none;
+  .desktop.nav {
+    display: none;
   }
   #menu, .toggle-button {
     //display: block;
   }
   .toggle-button {
     display: block;
+  }
+  .nav {
+    position: relative;
+    top: 40px;
+    right: 0;
   }
   .shapes {
     //-webkit-transform: scale(.7);
@@ -1037,6 +1048,71 @@ video#bgvid {
   transform-origin: top left;
   margin: 0;*/
     transform-origin: left;
+  }
+
+
+
+}
+
+@media (max-width: 600px) {
+  #right,#left {
+    width: 5px;
+  }
+  #top,#bottom {
+    height: 5px;
+  }
+  .container {
+    &.hero {
+      height: 200px;
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+  .work {
+    .sub {
+      max-width: 300px;
+      h2 {
+        font-size: 23px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .hero-unit {
+    max-width: 250px;
+    padding: 10px 20px;
+    outline: 2px solid #ded;
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .list {
+    margin: 10px auto;
+    .item {
+      .card {
+        .info {
+          display: none;
+        }
+        .image {
+          &.desktop {
+            display: none;
+          }
+          &.mobile {
+            position: relative;
+            max-width: 300px;
+            width: 80%;
+            height: 80%;
+            background-position: top center;
+            bottom: inherit;
+            right: inherit;
+            margin: 0 auto;
+            float: none;
+          }
+        }
+      }
+    }
   }
 }
 
