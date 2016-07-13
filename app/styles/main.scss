@@ -786,6 +786,25 @@ video#bgvid {
   }
 }
 
+.nextArrow {
+  right: 50px;
+}
+
+.prevArrow {
+  left: 50px;
+}
+
+.nextArrow, .prevArrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  z-index: 50;
+  cursor: pointer;
+}
+
+
+
 .slick-list {
   overflow: hidden;
 }
@@ -806,6 +825,25 @@ video#bgvid {
     /* Rules below not implemented in browsers yet */
     -o-user-select: none;
     user-select: none;
+    .info-btn {
+      display: block;
+      background: rgba(0,0,0,0.6);
+      width: 60px;
+      height: 60px;
+      padding: 5px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 10;
+      text-align: center;
+      font-size: 50px;
+      border-radius: 90px;
+      cursor: pointer;
+      display: none;
+    }
     &.mcd {
       .card {
         .image {
@@ -852,7 +890,29 @@ video#bgvid {
         -moz-animation-duration: 1s;
         -moz-animation-delay: 0.8s;
         animation-duration: 1s;
-        animation-delay: 0.8s;  
+        animation-delay: 0.8s;
+        .close {
+          float: right;
+          padding: 0;
+          font-size: 40px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          line-height: 30px;
+          background: rgba(0,0,0,0.5);
+          display: none;
+          cursor: pointer;
+        }
+        a {
+          margin: 0;
+          font-family: 'merriweather', serif;
+          font-style: italic;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 1.4em;
+          cursor: pointer;
+          color: white;
+        }  
         .num {
           display: inline-block;
           padding: 10px;
@@ -1021,6 +1081,77 @@ video#bgvid {
 // media queries
 
 @media (max-width: 1440px) {
+  .nextArrow, .prevArrow {
+    display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  // work
+  .nextArrow, .prevArrow {
+    display: block;
+  }  
+  .list {
+    margin: 20px auto;
+    .item {
+      height: 490px;
+
+      .info-btn {
+        display: block;
+        transition: all 0.2s ease;
+      }
+      // active info card stuff
+      &.info-active {
+        .info-btn {
+          opacity: 0;
+          transition: all 0.2s ease;
+        }
+        .card {
+          .info {
+            display: block;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-delay: 0.2s;
+            -moz-animation-duration: 1s;
+            -moz-animation-delay: 0.2s;
+            animation-duration: 1s;
+            animation-delay: 0.2s;             
+          }
+          .image {
+            opacity: 0.2;
+          }
+        }
+      }
+      .card {
+        .info {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 80%;
+          max-width: 450px;
+          text-align: center;
+          margin: auto;
+          height: 300px;
+          display: none;
+          .close {
+            display: inline-block;
+          }          
+        }
+        .image {
+          width: 700px;
+          height: 450px;
+          float: none;
+          margin: 0 auto;
+          opacity: 1;
+          &.mobile {
+            width: 200px;
+            height: 320px;
+            margin-right: 100px;
+          }
+        }
+      }
+    }
+  }
 
 }
 
@@ -1050,11 +1181,27 @@ video#bgvid {
     transform-origin: left;
   }
 
+  .nextArrow, .prevArrow {
+    font-size: 20px;
+  }
 
+  .nextArrow {
+    right: 10px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px;
+  }
+  .prevArrow {
+    left: 10px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px;
+  }
 
 }
 
 @media (max-width: 600px) {
+  #particles-js {
+    display: none;
+  }
   #right,#left {
     width: 5px;
   }
@@ -1074,6 +1221,7 @@ video#bgvid {
       max-width: 300px;
       h2 {
         font-size: 23px;
+        display: none;
       }
       p {
         font-size: 12px;
@@ -1091,7 +1239,11 @@ video#bgvid {
   .list {
     margin: 10px auto;
     .item {
+      .info-btn {
+        top: inherit;
+      }
       .card {
+
         .info {
           display: none;
         }
@@ -1102,8 +1254,8 @@ video#bgvid {
           &.mobile {
             position: relative;
             max-width: 300px;
-            width: 80%;
-            height: 80%;
+            width: 65%;
+            height: 85%;
             background-position: top center;
             bottom: inherit;
             right: inherit;
