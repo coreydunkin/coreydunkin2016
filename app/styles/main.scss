@@ -34,6 +34,15 @@ $offblack: #222;
   position: absolute;
 }
 
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 // adding a border to the viewport
 #topleft, #topright, #bottomleft, #bottomright {
  height: 48px;
@@ -236,6 +245,7 @@ body {
   }
 }
 
+
 .page {
   height: 100vh;
   //border: 1px solid red;
@@ -274,7 +284,8 @@ body {
     animation: appear 1.4s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-
+    position: fixed;
+    overflow: hidden;
   }
 }
 
@@ -298,6 +309,46 @@ body {
     filter: sepia(0.6) saturate(3) blur(1px) drop-shadow( -5px -5px 5px rgba(0,0,0,0.25) ); /* Same syntax as box-shadow */
   }
 }
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 20s linear infinite;
+  -moz-animation: rotating 20s linear infinite;
+  -ms-animation: rotating 20s linear infinite;
+  -o-animation: rotating 20s linear infinite;
+  animation: rotating 20s linear infinite;
+}
+
 .shapes-container {
   //position:absolute;
   left:20px;
@@ -305,7 +356,22 @@ body {
   right:20px;
   bottom:20px;
   //overflow: hidden;
-  //margin-top: -40px; 
+  //margin-top: -40px;
+  &.pizza {
+    background-image: url(../images/pizza.png);
+    max-width: 720px;
+    height: 720px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: center center;
+    opacity: 0.6;
+    width: 100%;
+    filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.25) );
+    .shapes {
+      display: none;
+    }
+  } 
 }
 .shapes {
   /*width: 100%;
@@ -805,13 +871,24 @@ video#bgvid {
 
 
 
+.slick-slide {
+  outline: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
 .slick-list {
   overflow: hidden;
 }
 
+
+
 .list {
   width: 100%;
-  margin: 50px auto;
+  margin: 20px auto;
+
+
+
   .item {
     width: 100%;
     height: 550px;
@@ -825,6 +902,20 @@ video#bgvid {
     /* Rules below not implemented in browsers yet */
     -o-user-select: none;
     user-select: none;
+    
+    &.slick-active {
+      opacity: 1;
+      transition: all 0.2s ease;
+      .card {
+        .info {
+          opacity: 1;
+        }
+        .image {
+          opacity: 1;
+        }
+      }
+    }
+
     .info-btn {
       display: block;
       background: rgba(0,0,0,0.6);
@@ -843,6 +934,16 @@ video#bgvid {
       border-radius: 90px;
       cursor: pointer;
       display: none;
+      // &:after {
+      //   content: 'info';
+      //   font-family: 'merriweather', serif;
+      //   font-style: italic;
+      //   font-weight: 300;
+      //   font-size: 16px;
+      //   line-height: 1.4em;
+      //   cursor: pointer;
+      //   color: white;   
+      // }   
     }
     &.mcd {
       .card {
@@ -864,6 +965,54 @@ video#bgvid {
           }
           &.mobile {
             background-image: url(../images/work-dfrwomen-mobile.jpg);
+          }
+        }
+      }
+    }
+    &.vw {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-vw.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-vw-mobile.jpg);
+          }
+        }
+      }
+    }
+    &.xxxx {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-summerale.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-summerale-mobile.jpg);
+          }
+        }
+      }
+    }
+    &.jft {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-jft.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-jft-mobile.jpg);
+          }
+        }
+      }
+    }
+    &.facewrap {
+      .card {
+        .image {
+          &.desktop {
+            background-image: url(../images/work-facewrap.jpg);
+          }
+          &.mobile {
+            background-image: url(../images/work-facewrap-mobile.jpg);
           }
         }
       }
@@ -1082,7 +1231,7 @@ video#bgvid {
 
 @media (max-width: 1440px) {
   .nextArrow, .prevArrow {
-    display: none;
+    //display: none;
   }
 }
 
@@ -1108,6 +1257,8 @@ video#bgvid {
         }
         .card {
           .info {
+            transition: all 0.2s ease;
+            opacity: 1;
             display: block;
             -webkit-animation-duration: 1s;
             -webkit-animation-delay: 0.2s;
@@ -1199,6 +1350,22 @@ video#bgvid {
 }
 
 @media (max-width: 600px) {
+  .nextArrow, .prevArrow {
+    background: none;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+  .shapes-container {
+    margin-top: -100px;
+  }
+  .container {
+    &.hero {
+      height: 180px;
+      margin-top: 257px;
+    }
+  }
   #particles-js {
     display: none;
   }
@@ -1221,10 +1388,12 @@ video#bgvid {
       max-width: 300px;
       h2 {
         font-size: 23px;
-        display: none;
+        //display: none;
       }
       p {
         font-size: 12px;
+        opacity: 0;
+        display: none;
       }
     }
   }
@@ -1241,21 +1410,61 @@ video#bgvid {
     .item {
       .info-btn {
         top: inherit;
+        bottom: 20px;
+        background: none;
       }
       .card {
 
         .info {
           display: none;
+          width: 60%;
+          margin-top: 50px;
+          z-index: 10;
+          .close {
+            border: 1px solid $offwhite;
+            bottom: 0px;
+            width: 100%;
+            top: initial;
+          }
+          h2 {
+            font-size: 20px;
+          }
+          .info-text {
+            padding: 10px 15px;;
+            outline: 0px;
+            margin-top: 10px;
+            p {
+              font-size: 14px;
+            }
+          }
         }
         .image {
           &.desktop {
-            display: none;
+            //display: none;
+            position: absolute;
+            z-index: 999;
+            max-width: 280px;
+            width: 100%;
+            height: 150px;
+            //bottom: 30%;
+            //float: left;
+            //right: 10%;
+            /* margin-bottom: -140px; */
+            //position: relative;
+            box-shadow: 0px 0px 25px rgba(0,0,0,0.35);
+            top: 0;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            //opacity: 0.4!important;
+            z-index: 5;
           }
           &.mobile {
             position: relative;
             max-width: 300px;
             width: 65%;
-            height: 85%;
+            height: 80%;
             background-position: top center;
             bottom: inherit;
             right: inherit;
@@ -1266,11 +1475,61 @@ video#bgvid {
       }
     }
   }
+  .contact-card {
+    width: 300px;
+    outline: 2px solid #ded;
+  }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (max-width : 360px) {
 
 /* Styles */
+  .shapes-container {
+    margin-top: -150px;
+  }
+  .container.hero {
+    margin-top: 207px;
+  }
+  .item .card .info {
+    width: 220px;
+  }
+  .list .item .card .info {
+    height: 340px;
+  }  
+}
 
+
+@media only screen and (max-width : 320px) {
+
+.shapes-container.pizza {
+  margin-top: -70px;
+}
+
+/* Styles */
+  .list {
+    .item {
+      height: 400px;
+      .card {
+        .info {
+          margin-top: 0px;
+          .close {
+
+          }
+        }
+      }
+      .info-btn {
+        bottom: 0;
+      }
+    }
+  }
+  .list .item .card .image.mobile {
+    //height: 60%;
+  }
+  .list .item .card .info {
+    height: 340px;
+  }    
+  .list .item .card .info {
+    width: 200px;
+  }
 }
 

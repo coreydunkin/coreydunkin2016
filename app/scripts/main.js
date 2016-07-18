@@ -2,6 +2,11 @@ console.log('\'Allo \'Allo!');
 
 var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
+// really stupid but if the url has pizza, put in a pizza?
+if(window.location.href.indexOf('pizza') > -1) {
+   $('.shapes-container').addClass('pizza rotating');
+}
+
 // intro load
 
 $('.hero').addClass('animated fadeInUp')
@@ -83,12 +88,15 @@ $('#fullpage').fullpage({
     }
 });
 
+// check mobile and break out of fullpage
+
+
 // starting all the shapes into a variable for later use
 var homeShapes = [];
 
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'scripts/particles.json', function() {
+particlesJS.load('particles-js', 'http://api.myjson.com/bins/2bkil', function() {
   console.log('callback - particles.js config loaded');
 });
 
@@ -400,6 +408,11 @@ function checkSize (nextSlide, getActiveSlide) {
   //console.log(getActiveSlide + ' is this here');
 
   var windowWidth = $(window).width();
+
+  if (windowWidth < 600) {
+    $.fn.fullpage.destroy();
+  };
+
   if (windowWidth < 901) {
     responsiveShape();
   };
@@ -443,17 +456,24 @@ function urlChange (checkURL) {
   });
 }
 
+console.log(window.location.hash);
+
 urlChange();
 
 
 // work section
+var item_length = $('.list > .item').length - 1;
 
 $('.list').slick({
   dots: false,
   infinite: false,
   speed: 500,
-  waitForAnimate: true
+  waitForAnimate: true,
+  swipeToSlide: true,
+  touchMove: true
 });
+
+
 
 $('.nextArrow').off().on('click', function () {
   $('.list').slick('slickNext');
@@ -487,30 +507,39 @@ $('.close').off().on('click', function () {
 });
 
 
-// On before slide change
-$('.list').on('beforeChange', function(event, slick, currentSlide, nextSlide, getActiveSlide){
 
-  console.log(nextSlide);
+// On swipe event
+
+
+$('.list').on('edge', function(event, slick, direction, currentSlide, nextSlide, getActiveSlide){
+  console.log(direction);
+
+});
+
+// On before slide change
+$('.list').on('beforeChange', function(event, slick, currentSlide, nextSlide, getActiveSlide, giveDirection){
+
   var getSlide = $('[data-slick-index='+nextSlide+']');
   var lastSlide = $('[data-slick-index='+currentSlide+']');
 
+ 
 
   $('.item').removeClass('info-active');
   
 
   if (nextSlide > currentSlide) {
-    
     $(getSlide).find('.info, .desktop, .mobile').addClass('animated fadeInRight');
-  } else{
-    
+  } else {
     $(getSlide).find('.info, .desktop, .mobile').addClass('animated fadeInLeft');
   };
+
+
 });
 
 
-$('.list').on('afterChange', function(event, slick, currentSlide, nextSlide){
+$('.list').on('afterChange', function(event, slick, currentSlide, nextSlide, item_length, index){
   
-  console.log(nextSlide);
+  
   var prevSlide = currentSlide-1;
   var newSlide = currentSlide+1;
   var getSlide = $('[data-slick-index='+newSlide+']');
@@ -518,6 +547,11 @@ $('.list').on('afterChange', function(event, slick, currentSlide, nextSlide){
 
   $(lastSlide).find('.info, .desktop, .mobile').removeClass('animated fadeInRight fadeInLeft fadeInUp fadeOutDown');
   $(getSlide).find('.info, .desktop, .mobile').removeClass('animated fadeInRight fadeInLeft fadeInUp fadeOutDown');
+  
+  if( item_length == index ){
+      
+  };
+
 });
 
 $('.card figure').on('mouseover', function(event) {
