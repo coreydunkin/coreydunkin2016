@@ -7,7 +7,10 @@
     "particles.js": "^2.0.0",
     "animate.css": "^3.5.2",
     "slick-carousel": "^1.6.0",
-    "slideout.js": "0.0.7"
+    "slideout.js": "^0.1.8",
+    "gsap": "^2.0.2",
+    "underscore": "^1.9.1",
+    "fullpage.js": "2.8.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
